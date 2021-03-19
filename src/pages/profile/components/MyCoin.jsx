@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MyCoin() {
   return (
-    <div className="tab5 cointab" style={{ display: "block" }}>
+    <div className="tab5 cointab">
       <div className="coininfo">
         <div className="coininfo__box">
           <h3>

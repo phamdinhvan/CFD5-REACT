@@ -1,3 +1,26 @@
 .custom {
     font-size: 23px;
 }
+.profile .tab .tab-content .tab1 {
+    position: relative;
+}
+.register-course .wrap label {
+    position: relative;
+}
+
+.error-text {
+    font-family: 100% !important;
+    color: #c00000;
+}
+
+.nav ul li.active {
+    background: unset;
+}
+.nav ul li.active a {
+    color: black;
+}
+
+.nav ul li a.active {
+    background: #00afab;
+    color: black;
+}

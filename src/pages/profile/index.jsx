@@ -1,4 +1,9 @@
 import React from "react";
+import {
+  Route,
+  Switch
+} from 'react-router-dom'
+import { NavLink, useRouteMatch } from "react-router-dom";
 import Info from "./components/Info";
 import MyCoin from "./components/MyCoin";
 import MyCourse from "./components/MyCourse";
@@ -6,6 +11,7 @@ import Payment from "./components/Payment";
 import Project from "./components/Project";
 
 export default function Profile() {
+  let { url } = useRouteMatch()
   return (
     <div>
       <main className="profile" id="main">
@@ -22,20 +28,26 @@ export default function Profile() {
           <div className="container">
             <div className="tab">
               <div className="tab-title">
-                <a href="#" className="active">
+                <NavLink exact to={url}>
                   Thông tin tài khoản
-                </a>
-                <a href="#">Khóa học của bạn</a>
-                <a href="#">Dự án đã làm</a>
-                <a href="#">Lịch sử thanh toán</a>
-                <a href="#">Quản lý COIN của tôi</a>
+                </NavLink>
+                <NavLink to={`${url}/course`}>Khóa học của bạn</NavLink>
+                <NavLink to={`${url}/project`}>Dự án đã làm</NavLink>
+                <NavLink to={`${url}/hisotry-payment`}>
+                  Lịch sử thanh toán
+                </NavLink>
+                <NavLink to={`${url}/coin`}>Quản lý COIN của tôi</NavLink>
               </div>
               <div className="tab-content">
-                <Info />
-                <MyCourse />
-                <Project />
-                <Payment />
-                <MyCoin />
+                <Switch>
+                  <Route path={`${url}/course`} component={MyCourse} />
+                  <Route path={`${url}/project`} component={Project} />
+                  <Route
+                    path={`${url}/hisotry-payment`}
+                    component={Payment}/>
+                  <Route path={`${url}/coin`} component={MyCoin} />
+                  <Route exact path={url} component={Info} />
+                </Switch>
               </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Project() {
   return (
-    <div className="tab3" style={{ display: "none" }}>
+    <div className="tab3">
       <div className="row">
         <div className="col-md-6 course">
           <div className="wrap">
@@ -29,7 +29,7 @@ export default function Project() {
           </div>
         </div>
         <div className="col-md-6 course">
-          <div className="wrap">
+          <div className="wrap">  
             <a href="#" className="cover">
               <img src="img/img8.png" alt="" />
             </a>
