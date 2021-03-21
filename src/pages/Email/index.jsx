@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Email() {
   return (
@@ -16,7 +17,7 @@ export default function Email() {
         <div className="inner" style={{ padding: "50px" }}>
           <div className="logo">
             <img
-              src="img/logo.svg"
+              src="/img/logo.svg"
               alt=""
               style={{ width: "100px", marginBottom: "10px" }}
             />
@@ -38,8 +39,8 @@ export default function Email() {
               tại <strong>CFD</strong> thành công, chúng tôi sẽ chủ động liên hệ
               thông qua số điện thoại của bạn.
             </p>
-            <a
-              href="#"
+            <NavLink
+              to="/"
               target="_blank"
               className="btn"
               style={{
@@ -58,7 +59,7 @@ export default function Email() {
               }}
             >
               Trang chủ CFD
-            </a>
+            </NavLink>
           </div>
         </div>
         <div

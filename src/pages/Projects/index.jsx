@@ -1,8 +1,9 @@
 import React from "react";
+import MainLayout from "../../layout/MainLayout";
 
 export default function Projects() {
   return (
-    <div>
+    <MainLayout>
       <main className="projectpage" id="main">
         <section className="section-1">
           <div className="container">
@@ -107,6 +108,6 @@ export default function Projects() {
           </div>
         </section>
       </main>
-    </div>
+    </MainLayout>
   );
 }

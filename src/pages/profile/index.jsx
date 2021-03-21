@@ -4,6 +4,7 @@ import {
   Switch
 } from 'react-router-dom'
 import { NavLink, useRouteMatch } from "react-router-dom";
+import MainLayout from "../../layout/MainLayout";
 import Info from "./components/Info";
 import MyCoin from "./components/MyCoin";
 import MyCourse from "./components/MyCourse";
@@ -13,13 +14,13 @@ import Project from "./components/Project";
 export default function Profile() {
   let { url } = useRouteMatch()
   return (
-    <div>
+    <MainLayout>
       <main className="profile" id="main">
         <section>
           <div className="top-info">
             <div className="avatar">
               {/* <span class="text">H</span> */}
-              <img src="img/avatar-lg.png" alt="" />
+              <img src="/img/avatar-lg.png" alt="" />
               <div className="camera" />
             </div>
             <div className="name">trần nghĩa</div>
@@ -53,6 +54,6 @@ export default function Profile() {
           </div>
         </section>
       </main>
-    </div>
+    </MainLayout>
   );
 }

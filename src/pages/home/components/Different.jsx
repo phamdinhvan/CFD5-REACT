@@ -10,7 +10,7 @@ export default function Different() {
               Những điều <br />
               <span>đặc biệt</span> tại CFD
             </h2>
-            <div className="videodif" data-src="video/CFD-video-intro.mp4">
+            <div className="videodif" data-src="/video/CFD-video-intro.mp4">
               <img src="/img/img-cfd-dac-biet.jpg" alt="" />
               <div className="play-btn btn-video-intro">
                 <img src="/img/play-icon.svg" alt="" />

@@ -21,7 +21,7 @@ let [isOpen, setIsOpen] = useState('flex')
 
   return ReactDOM.createPortal(
     <>
-      <div className="popup-form popup-login" style={{ display: isOpen }}>
+      <div className="popup-form popup-login" style={{ display : "none"}}>
         <div className="wrap">
           {/* login-form */}
           <div className="ct_login" style={{ display: "block" }}>
@@ -50,7 +50,7 @@ let [isOpen, setIsOpen] = useState('flex')
               </div>
             </div>
             <div className="close">
-              <img src="img/close-icon.png" alt="" />
+              <img src="/img/close-icon.png" alt="" />
             </div>
           </div>
           {/* email form */}
@@ -77,7 +77,7 @@ let [isOpen, setIsOpen] = useState('flex')
             của CFD
           </p>
           <div className="close">
-            <img src="img/close-icon.png" alt="" />
+            <img src="/img/close-icon.png" alt="" />
           </div>
         </div>
       </div>

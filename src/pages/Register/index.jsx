@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import MainLayout from "../../layout/MainLayout";
 
 export default function Register() {
 
@@ -7,7 +8,9 @@ export default function Register() {
     phone: '',
     email: '',
     fbURL: '',
-    opinion: ''
+    opinion: '',
+    coin: false,
+    payment: 'chuyen-khoan'
   })
 
   let[error, setError] = useState({
@@ -15,16 +18,23 @@ export default function Register() {
     phone: '',
     email: '',
     fbURL: '',
-    opinion: ''
+    opinion: '',
+    coin: false
   }) 
 
   function inputChange(e) {
-    // let checked = false;
-    // let type = document.getElementById("type").textContent
+
+    let name = e.target.name,
+        value = e.target.value,
+        type = e.target.type 
+      
+    if(type ==='checkbox') {
+      value = e.target.checked
+    }
 
     setForm({
       ...form,
-      [e.target.name]:e.target.value
+      [name]: value
     })
   }
 
@@ -55,14 +65,22 @@ export default function Register() {
     }
 
     setError(errorObj)
+    console.log(form)
 
     if(Object.keys(errorObj).length=== 0) {
       alert('Đăng ký thành công') 
     }
   }
 
+  let _selectMethod = (value) => {
+    setForm({
+      ...form,
+      payment: value 
+    })
+  }
+
   return (
-    <div>
+    <MainLayout>
       <main className="register-course" id="main">
         <section>
           <div className="container">
@@ -115,7 +133,7 @@ export default function Register() {
                     Hiện có <strong>300 COIN</strong>
                     {/* Giảm giá còn <span><strong>5.800.000 VND</strong>, còn lại 100 COIN</span> */}
                     {/* Cần ít nhất 200 COIN để giảm giá */}
-                    <input  type="checkbox" defaultChecked="checked"
+                    <input  type="checkbox" defaultChecked="checked" name ="coin" checked={form.coin} onChange={inputChange}
                      
                     />
                     <span className="checkmark" />
@@ -126,9 +144,8 @@ export default function Register() {
                   <div className="select" >
                     <div className="head">Chuyển khoản</div>
                     <div className="sub">
-                      <a href="#">-----/-----</a>
-                      <a href="#">Chuyển khoản</a>
-                      <a href="#">Thanh toán tiền mặt</a>
+                      <a href="#" onClick={_selectMethod.bind(null,'chuyen-khoan')} >Chuyển khoản</a>
+                      <a href="#" onClick={_selectMethod.bind(null,'tien-mat')}>Thanh toán tiền mặt</a>
                     </div>
                   </div>
                 </label>
@@ -157,6 +174,6 @@ export default function Register() {
             <a href="/" class="btn main rect">về trang chủ</a>
         </div> */}
       </main>
-    </div>
+    </MainLayout>
   );
 }

@@ -1,19 +1,20 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Error() {
   return (
-    <div>
+    <>
       <main className="notfound" id="main">
         <div className="container">
           <section>
             <h2 className="main-title">404</h2>
             <p>Không tìm thấy trang</p>
-            <a href="#" className="btn main round">
+            <NavLink to="/" className="btn main round">
               Trang chủ
-            </a>
+            </NavLink>
           </section>
         </div>
       </main>
-    </div>
+    </>
   );
 }

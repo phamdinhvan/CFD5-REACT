@@ -1,8 +1,9 @@
 import React from "react";
+import MainLayout from "../../layout/MainLayout";
 
 export default function Pay() {
   return (
-    <div>
+    <MainLayout>
       <main className="paypage" id="main">
         <div className="container">
           <section>
@@ -71,6 +72,6 @@ export default function Pay() {
           </section>
         </div>
       </main>
-    </div>
+    </MainLayout>
   );
 }

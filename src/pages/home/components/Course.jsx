@@ -1,19 +1,28 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
-export default function Course({name, image, des, status, teacher_name, teacher_img, slug} ) {
-  
-    return (
+export default function Course({
+  name,
+  image,
+  des,
+  status,
+  teacher_name,
+  teacher_img,
+  slug,
+}) {
+  return (
     <div className="col-md-4 course">
       <div className="wrap">
         <a className="cover" href="#">
           <img src={image} alt="" />
-          {
-              status === 'dang-dien-ra' ?
-              <span className= "badge b2">Đang diễn ra</span>
-              : status === 'da-ket-thuc' ? <span className="badge b1">Đã kết thúc</span>
-              : <span className="badge b3">Sắp khai giảng</span>
-          }
-          
+          {status === "dang-dien-ra" ? (
+            <span className="badge b2">Đang diễn ra</span>
+          ) : status === "da-ket-thuc" ? (
+            <span className="badge b1">Đã kết thúc</span>
+          ) : (
+            <span className="badge b3">Sắp khai giảng</span>
+          )}
+
           <div className="hover">
             <div className="top">
               <div className="user">
@@ -33,9 +42,7 @@ export default function Course({name, image, des, status, teacher_name, teacher_
           <a className="name" href="#">
             {name}
           </a>
-          <p className="des">
-            {des}
-          </p>
+          <p className="des">{des}</p>
         </div>
         <div className="bottom">
           <div className="teacher">
@@ -44,7 +51,9 @@ export default function Course({name, image, des, status, teacher_name, teacher_
             </div>
             <div className="name">{teacher_name}</div>
           </div>
-          <div className="register-btn">Đăng Ký</div>
+          <div className="register-btn">
+            <NavLink to="/register">Đăng Ký</NavLink>
+          </div>
         </div>
       </div>
     </div>
