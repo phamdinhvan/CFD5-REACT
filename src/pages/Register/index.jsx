@@ -80,7 +80,6 @@ export default function Register() {
   }
 
   return (
-    <MainLayout>
       <main className="register-course" id="main">
         <section>
           <div className="container">
@@ -174,6 +173,5 @@ export default function Register() {
             <a href="/" class="btn main rect">về trang chủ</a>
         </div> */}
       </main>
-    </MainLayout>
   );
 }

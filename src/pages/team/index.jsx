@@ -1,12 +1,10 @@
 import React from "react";
-import MainLayout from "../../layout/MainLayout";
 import Content from "./components/Content";
 import Founder from "./components/Founder";
 import Members from "./components/Members";
 
 export default function Team() {
   return (
-    <MainLayout>
       <main className="team" id="main">
         <section>
           <div className="container">
@@ -73,6 +71,5 @@ export default function Team() {
           </div>
         </section>
       </main>
-    </MainLayout>
   );
 }

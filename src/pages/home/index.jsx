@@ -8,7 +8,6 @@ import Terminal from "./components/Terminal";
 
 export default function Home() {
   return (
-    <MainLayout>
       <main className="homepage" id="main">
         <Banner />
         <ListCourse />
@@ -17,6 +16,5 @@ export default function Home() {
         <Gallery />
         <Action />
       </main>
-    </MainLayout>
   );
 }

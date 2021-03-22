@@ -3,7 +3,6 @@ import MainLayout from "../../layout/MainLayout";
 
 export default function Projects() {
   return (
-    <MainLayout>
       <main className="projectpage" id="main">
         <section className="section-1">
           <div className="container">
@@ -108,6 +107,5 @@ export default function Projects() {
           </div>
         </section>
       </main>
-    </MainLayout>
   );
 }

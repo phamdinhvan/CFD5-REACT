@@ -3,7 +3,6 @@ import MainLayout from "../../layout/MainLayout";
 
 export default function FAQ() {
   return (
-    <MainLayout>
       <main className="faqpage" id="main">
         <div className="container">
           <section>
@@ -93,6 +92,5 @@ export default function FAQ() {
           </section>
         </div>
       </main>
-    </MainLayout>
   );
 }

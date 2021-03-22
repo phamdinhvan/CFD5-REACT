@@ -72,7 +72,6 @@ export default React.forwardRef(function Collaborate(props, ref) {
     }
   }
   return (
-    <MainLayout>
       <main className="register-course" id="main">
         <section className="section-1 wrap container">
           {/* <div class="main-sub-title">liên hệ</div> */}
@@ -137,6 +136,5 @@ export default React.forwardRef(function Collaborate(props, ref) {
             <a href="/" class="btn main rect">về trang chủ</a>
         </div> */}
       </main>
-    </MainLayout>
   );
 });

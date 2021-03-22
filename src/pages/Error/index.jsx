@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 
 export default function Error() {
   return (
-    <>
       <main className="notfound" id="main">
         <div className="container">
           <section>
@@ -15,6 +14,5 @@ export default function Error() {
           </section>
         </div>
       </main>
-    </>
   );
 }

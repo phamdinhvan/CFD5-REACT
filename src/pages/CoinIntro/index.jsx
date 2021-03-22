@@ -3,7 +3,7 @@ import MainLayout from "../../layout/MainLayout";
 
 export default function CoinIntro() {
   return (
-    <MainLayout>
+    <>
       <main className="paypage" id="main">
         <div className="container">
           <section>
@@ -105,6 +105,6 @@ export default function CoinIntro() {
           </section>
         </div>
       </main>
-    </MainLayout>
+    </>
   );
 }

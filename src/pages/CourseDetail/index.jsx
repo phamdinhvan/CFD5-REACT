@@ -7,13 +7,11 @@ import MemberCourses from "./component/MemberCourses";
 
 export default function CourseDetail() {
   return (
-    <MainLayout>
       <main className="course-detail" id="main">
         <Banner/>
         <Detail/>
         <MemberCourses/>
         <AnotherCourse/>
       </main>
-    </MainLayout>
   );
 }

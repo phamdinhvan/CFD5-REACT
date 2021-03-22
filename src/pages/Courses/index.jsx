@@ -5,10 +5,8 @@ import CoursesCFD from "./components/CoursesCFD";
 
 export default function Courses() {
   return (
-    <MainLayout>
       <main className="homepage" id="main">
         <CoursesCFD/>
       </main>
-    </MainLayout>
   );
 }

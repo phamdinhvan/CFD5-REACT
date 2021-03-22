@@ -14,7 +14,6 @@ import Project from "./components/Project";
 export default function Profile() {
   let { url } = useRouteMatch()
   return (
-    <MainLayout>
       <main className="profile" id="main">
         <section>
           <div className="top-info">
@@ -54,6 +53,5 @@ export default function Profile() {
           </div>
         </section>
       </main>
-    </MainLayout>
   );
 }
