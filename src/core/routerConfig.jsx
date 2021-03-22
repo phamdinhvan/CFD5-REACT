@@ -6,12 +6,12 @@ import Courses from "../pages/Courses";
 import Email from "../pages/Email";
 import Error from "../pages/Error";
 import FAQ from "../pages/FAQ";
-import Home from "../pages/home";
+import Home from "../pages/Home";
 import Pay from "../pages/Pay";
-import Profile from "../pages/profile";
+import Profile from "../pages/Profile";
 import Projects from "../pages/Projects";
 import Register from "../pages/Register";
-import Team from "../pages/team";
+import Team from "../pages/Team";
 
 const routers = [
     {
