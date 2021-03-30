@@ -1,10 +1,15 @@
 import React, { useContext } from "react";
-import { NavLink, useRouteMatch } from "react-router-dom";
-import { AContext } from "../App";
-export default function Header() {
-  let { login, handleLogin } = useContext(AContext);
+import { NavLink } from "react-router-dom";
+import { AContext } from "../core/AppProvider";
+import useAuth from "../core/useAuth";
+import useDelayLink from "../core/useDelayLink";
 
-  let { url } = useRouteMatch();
+export default function Header() {
+  //let { login, user, handleLogin, poppupLogin, logout} = useContext(AContext);
+
+  let {login, user, handleLogin, poppupLogin, logout} = useAuth()
+
+  let delayLink = useDelayLink()
 
   function menuOpen() {
     document.body.classList.toggle("menu-is-show");
@@ -35,7 +40,7 @@ export default function Header() {
               <div className="have-login">
                 <div className="account">
                   <a href="#" className="info">
-                    <div className="name">Trần Lê Trọng Nghĩa</div>
+                    <div className="name">{user.name}</div>
                     <div className="avatar">
                       <img src="/img/avt.png" alt="" />
                     </div>
@@ -45,12 +50,12 @@ export default function Header() {
                 <div className="sub">
                   <NavLink to="/profile/course">Khóa học của tôi</NavLink>
                   <NavLink to="/profile">Thông tin tài khoản</NavLink>
-                  <NavLink to="/">Đăng xuất</NavLink>
+                  <a href="#" onClick={(e) => { e.preventDefault(); logout() }}>Đăng xuất</a>
                 </div>
               </div>
             ) : (
               <div class="not-login bg-none">
-                <a href="#" class="btn-register" onClick={handleLogin}>
+                <a href="#" class="btn-register" onClick={poppupLogin}>
                   Đăng nhập
                 </a>
                 <a href="login.html" class="btn main btn-open-login">
@@ -68,7 +73,7 @@ export default function Header() {
             <a href="#">Đăng ký</a>
           </li>
           <li className="active">
-            <NavLink onClick={menuClose} to="/">
+            <NavLink exact onClick={menuClose} to="/">
               Trang chủ
             </NavLink>
           </li>

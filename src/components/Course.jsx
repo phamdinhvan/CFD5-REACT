@@ -1,26 +1,25 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Course({
-  name,
-  image,
-  des,
-  status,
-  teacher_name,
-  teacher_img,
+  title,
+  thumbnail,
+  short_description,
+  course_status,
+  teacher,
   slug,
 }) {
   return (
     <div className="col-md-4 course">
       <div className="wrap">
-        <a className="cover" href="#">
-          <img src={image} alt="" />
-          {status === "dang-dien-ra" ? (
+        <Link className="cover" to={`/coursedetail/${slug}`}>
+          <img src={thumbnail.link} alt="" />
+          {course_status === "dang-dien-ra" ? (
             <span className="badge b2">Đang diễn ra</span>
-          ) : status === "da-ket-thuc" ? (
-            <span className="badge b1">Đã kết thúc</span>
+          ) : course_status === "da-ket-thuc" ? (
+            <span className="badge b1">Da ket thuc</span>
           ) : (
-            <span className="badge b3">Sắp khai giảng</span>
+            <span className="badge b3">Sap khap giang</span>
           )}
 
           <div className="hover">
@@ -37,23 +36,23 @@ export default function Course({
               <img src="/img/icon-viewmore.svg" alt="" />
             </div>
           </div>
-        </a>
+        </Link>
         <div className="info">
-          <a className="name" href="#">
-            {name}
-          </a>
-          <p className="des">{des}</p>
+          <Link className="name" to={`/coursedetail/${slug}`}>
+            {title}
+          </Link>
+          <p className="des">{short_description}</p>
         </div>
         <div className="bottom">
           <div className="teacher">
             <div className="avatar">
-              <img src={teacher_img} alt="" />
+              <img src={teacher.avatar.link} alt="" />
             </div>
-            <div className="name">{teacher_name}</div>
+            <div className="name">{teacher.title}</div>
           </div>
-          <div className="register-btn">
-            <NavLink to="/register">Đăng Ký</NavLink>
-          </div>
+          <Link to={`/register/${slug}`} className="register-btn">
+            Đăng Ký
+          </Link>
         </div>
       </div>
     </div>

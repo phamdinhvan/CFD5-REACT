@@ -1,18 +1,16 @@
 import React from "react";
 import {
-  Route,
-  Switch
-} from 'react-router-dom'
-import { NavLink, useRouteMatch } from "react-router-dom";
-import MainLayout from "../../layout/MainLayout";
-import Info from "./components/Info";
-import MyCoin from "./components/MyCoin";
-import MyCourse from "./components/MyCourse";
-import Payment from "./components/Payment";
-import Project from "./components/Project";
+  NavLink,
 
-export default function Profile() {
+  useRouteMatch
+} from 'react-router-dom';
+import useAuth from "../../core/useAuth";
+
+export default function Profile({children}) {
   let { url } = useRouteMatch()
+
+  let {user} = useAuth()
+
   return (
       <main className="profile" id="main">
         <section>
@@ -22,7 +20,7 @@ export default function Profile() {
               <img src="/img/avatar-lg.png" alt="" />
               <div className="camera" />
             </div>
-            <div className="name">trần nghĩa</div>
+            <div className="name">{user.name}</div>
             <p className="des">Thành viên của team CFD1-OFFLINE</p>
           </div>
           <div className="container">
@@ -39,15 +37,7 @@ export default function Profile() {
                 <NavLink to={`${url}/coin`}>Quản lý COIN của tôi</NavLink>
               </div>
               <div className="tab-content">
-                <Switch>
-                  <Route path={`${url}/course`} component={MyCourse} />
-                  <Route path={`${url}/project`} component={Project} />
-                  <Route
-                    path={`${url}/hisotry-payment`}
-                    component={Payment}/>
-                  <Route path={`${url}/coin`} component={MyCoin} />
-                  <Route exact path={url} component={Info} />
-                </Switch>
+                {children}                
               </div>
             </div>
           </div>

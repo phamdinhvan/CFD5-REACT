@@ -1,26 +1,17 @@
-import {
-  BrowserRouter
-} from 'react-router-dom';
+import React from 'react';
 import './assets/css/custom.css';
-import routers from './core/routerConfig';
-import renderRouters from './routers';
-import React, { useState } from 'react';
+import routers from './routers'
+import renderRouters from './core/routerConfig'
+import AppProvider from './core/AppProvider'
 
-export let AContext = React.createContext()
+
 
 function App() {
 
-  let [login, setLogin] = useState(true)
-  function handleLogin() {
-    setLogin(true)
-  }
-
   return (
-    <AContext.Provider value={{ login, handleLogin }}>
-      <BrowserRouter>
+      <AppProvider>
         {renderRouters(routers)}
-      </BrowserRouter>
-    </AContext.Provider>
+      </AppProvider>
   );
 }
 

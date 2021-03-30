@@ -1,56 +1,55 @@
 import React, { useState } from "react";
+import useFormValidate from "../../../core/useFormValidate";
 
 export default function Info() {
-
-  let [form, setForm] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    fbURL: '',
-    skypeURL: ''
-  })
-
-  let[error, setError] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    fbURL: '',
-    skypeURL: ''
-  })
-
-  function inputChange(e) {
-
-    setForm({
-      ...form,
-      [e.target.name] : e.target.value
-    })
-  }
+  
   function btnSave() {
-    let errorObj = {}
-    if (!form.name) {
-      errorObj.name = 'Tên bạn là gì ?'
-    }
+    
+    let error = check();
 
-    if (!form.phone) {
-      errorObj.phone = 'Số điện thoại của bạn là gì ?'
-    }
-
-    if (!form.fbURL) {
-      errorObj.fbURL = 'Xin hãy nhập địa chỉ Facebook'
-    } else if(!/([A-z0-9\.]+)\/?$/i.test(form.fbURL)) {
-      errorObj.fbURL = 'URL không đúng '
-    }
-
-    if (form.skypeURL) {
-      errorObj.skypeURL = '!!!'
-    }
-
-    setError(errorObj)
-
-    if(Object.keys(errorObj).length=== 0) {
-      alert('Lưu thành công') 
+    if (Object.keys(error).length === 0) {
+      alert("Lưu thành công");
     }
   }
+
+  let { form, error, inputChange, check } = useFormValidate(
+    {
+      name: "",
+      phone: "",
+      email: "pdvan999@gmail.com",
+      fbURL: "",
+      skype: "",
+     
+    },
+    {
+      rule: {
+        name: {
+          required: true,
+        },
+        phone: {
+          required: true,
+          pattern: "phone",
+        },
+        fbURL: {
+          required: true,
+          pattern: "url",
+        },
+        skype: {
+          required: true,
+          pattern: "url",
+        },
+      },
+      message: {
+        name: {
+          required: "Họ và tên không được bỏ trống",
+        },
+      },
+      options : {
+          localStorage : "profile-info"
+      }
+    }
+  );
+
   return (
     <div className="tab1">
       <label>
@@ -71,7 +70,7 @@ export default function Info() {
         <p>
           Email<span>*</span>
         </p>
-        <input defaultValue="vuong.dang@dna.vn" disabled type="text" />
+        <input value={form.email} disabled type="text" />
       </label>
       <label>
         <p>
@@ -84,8 +83,8 @@ export default function Info() {
         <p>
           Skype<span>*</span>
         </p>
-        <input value={form.skypeURL} onChange={inputChange} type="text" name = "skypeURL" placeholder="Skype url" />
-        {error.skypeURL && <p className="error-text">{error.skypeURL}</p>}
+        <input value={form.skype} onChange={inputChange} type="text" name = "skype" placeholder="Skype url" />
+        {error.skype && <p className="error-text">{error.skype}</p>}
       </label>
       <div className="btn main rect" onClick={btnSave}>LƯU LẠI</div>
     </div>
