@@ -1,17 +1,34 @@
-import React from "react";
-
-export default function Members({ thumbnail, name, title }) {
+export default function Members({ img_coach, name, info, type, img_member }) {
   return (
-    <div className="item col-md-3 col-sm-4 col-xs-6">
-      <div className="wrap">
-        <div className="cover">
-          <img src={thumbnail} alt="" />
+    <>
+      {type === "teacher" ? (
+        <div className="item col-md-6 col-sm-6">
+          <div className="wrap">
+            <div className="cover">
+              <img src={img_coach} alt="" />
+            </div>
+            <div className="info">
+              <div className="name">{name}</div>
+              <p className="title">{info}</p>
+            </div>
+          </div>
         </div>
-        <div className="info">
-          <div className="name">{name}</div>
-          <p className="title">{title}</p>
+      ) : type === "member" ? (
+        <div className="item col-md-3 col-sm-4 col-xs-6">
+          <div className="wrap">
+            <div className="cover">
+              <span className="text"></span>
+              <img src={img_member} alt="" />
+            </div>
+            <div className="info">
+              <div className="name">{name}</div>
+              <p className="title">{info}</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }

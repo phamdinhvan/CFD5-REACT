@@ -1,75 +1,45 @@
-import React from "react";
-import Content from "./components/Content";
-import Founder from "./components/Founder";
 import Members from "./components/Members";
-
 export default function Team() {
   return (
-      <main className="team" id="main">
-        <section>
-          <div className="container">
-            <Content/>
-            <div className="list row">            
-              <Founder
-                thumbnail = "/img/thumb-member.jpg"
-                name = "Trần Nghĩa"
-                title ="Founder &amp; Creative Front-End Developer"
-              />
-              <Founder
-                thumbnail = "/img/thumb-member.jpg"
-                name = "Đặng Thuyền Vương"
-                title ="Co-Founder &amp; Fullstack Developer"
-              />
-              <Founder
-                thumbnail = "/img/thumb-member.jpg"
-                name = "Đặng Thuyền Quân"
-                title ="Co-Founder &amp; Backend Developer"  
-              /> 
-              <Founder
-                thumbnail = "/img/thumb-member.jpg"
-                name = "Nguyễn Đức Huy"
-                title ="Co-Founder &amp; Front-End Developer" 
-              />               
-              
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Diệp Anh Thy"
-                 title ="CFD1-Offline" 
-              />
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Huỳnh Tiến Tài"
-                 title ="CFD1-Offline" 
-              />
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Ngô Thành Long"
-                 title ="CFD1-Offline" 
-              />
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Trần Anh Tuấn"
-                 title ="CFD1-Offline" 
-              />
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Phạm Thành Trung"
-                 title ="CFD1-Offline" 
-              />
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Nguyễn Thanh Tùng"
-                 title ="CFD1-Offline" 
-              />
-              <Members
-                 thumbnail = "/img/thumb-member.jpg"
-                 name = "Huỳnh Anh Kiệt"
-                 title ="CFD1-Offline" 
-              />
-              
-            </div>
+    <main className="team" id="main">
+      <section>
+        <div className="container">
+          <div className="top">
+            <h2 className="main-title">CFD TEAM</h2>
+            <p className="top-des">
+            Chúng ta không phải một lớp học, những thành viên CFD là 
+            một TEAM, cùng học hỏi và hỗ trợ lẫn nhau dưới sự hướng 
+            dẫn từ những người đồng sáng lập CFD.
+            </p>
           </div>
-        </section>
-      </main>
+          <div className="list row">
+            <Members
+              type="teacher"
+              name="Trần Nghĩa"
+              img_coach="/img/Tran-Nghia.jpg"
+              info="Founder &amp; Creative Front-End Developer"
+            />
+            <Members
+              type="teacher"
+              name="Vương Đặng"
+              img_coach="/img/vuong-cfd.jpeg"
+              info="Founder &amp; Creative Front-End Developer"
+            />
+            <Members
+              type="teacher"
+              name="Huy Nguyễn"
+              img_coach="/img/huy.jpg"
+              info="Founder &amp; Creative Front-End Developer"
+            />
+            <Members
+              type="teacher"
+              name="Quân Đặng"
+              img_coach="/img/quan-cfd.jpg"
+              info="Founder &amp; Creative Front-End Developer"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
